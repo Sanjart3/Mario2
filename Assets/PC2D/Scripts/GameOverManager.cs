@@ -9,26 +9,21 @@ public class GameOverManager : MonoBehaviour
     private void Start()
     {
         gameScreen.SetActive(true);
-        // Ensure Game Over screen is hidden at the start
-        gameOverCanvas.SetActive(false);
+        gameOverCanvas.SetActive(false); // Ensure Game Over screen is hidden at the start
     }
 
     public void TriggerGameOver()
     {
-        // Show the Game Over screen
-        gameOverCanvas.SetActive(true);
+        gameOverCanvas.SetActive(true); // Show the Game Over screen
         gameScreen.SetActive(false);
 
-        // Pause the game (optional)
-        Time.timeScale = 0f;
+        Time.timeScale = 0f; // Pause the game
     }
 
-    public void RestartGame()
+    public void TriggerRestart()
     {
-        // Unpause the game
-        Time.timeScale = 1f;
+        Time.timeScale = 1f; // Unpause the game
 
-        // Reload the current scene
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Reload the scene
     }
 }

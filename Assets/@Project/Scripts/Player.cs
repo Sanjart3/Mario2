@@ -34,6 +34,11 @@ public class Player : MonoBehaviour
 		FindObjectOfType<GameOverManager>().TriggerGameOver();
 	}
 
+	public void Restart(){
+		FindObjectOfType<GameOverManager>().TriggerRestart();
+		gameObject.SetActive(true);
+	}
+
 	private void OnRetry()
 	{
 		SceneManager.LoadScene( SceneManager.GetActiveScene().buildIndex );
